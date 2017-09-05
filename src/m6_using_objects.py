@@ -15,16 +15,37 @@ def main():
 
 
     two_circles()
+    circle_and_rectangle()
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
 
 
 def two_circles():
 
-    window =rg.RoseWindow(500,300)
+    width = 1000
+    height = 500
+    window = rg.RoseWindow(width, height)
+
+    center_point = rg.Point(300, 250)
+    radius = 100
+    qw = rg.Circle(center_point, radius)
+    qw.fill_color = 'blue'
+    qw.attach_to(window)
+
+    center_point1 = rg.Point(600, 250)
+    radius1 = 200
+    wq = rg.Circle(center_point1, radius1)
+    wq.attach_to(window)
+
+    window.render()
     window.close_on_mouse_click()
 
-    qw =rg.Cicle(250,)
+
+
+
+
+
+
 
     """
     
@@ -37,7 +58,7 @@ def two_circles():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DONE: 2. Implement this function, per its doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.txt  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -46,6 +67,27 @@ def two_circles():
 
 
 def circle_and_rectangle():
+
+    width = 1000
+    height = 500
+    window = rg.RoseWindow(width, height)
+
+    center_point = rg.Point (400,250)
+    radius = 150
+
+    we = rg.Circle(center_point, radius)
+    we.pen = rg.Pen('black', 5)
+    we.fill_color = 'blue'
+    we.attach_to(window)
+
+
+
+    point1= rg.Point(700,300)
+    point2= rg.Point(600,200)
+    ew = rg.Rectangle(point1,point2)
+    ew.attach_to(window)
+    window.render()
+    window.close_on_mouse_click()
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
